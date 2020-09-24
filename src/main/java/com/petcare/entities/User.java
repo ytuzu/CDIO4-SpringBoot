@@ -26,13 +26,6 @@ public class User extends BaseEntity{
 				joinColumns = @JoinColumn(name = "user_id"), 
 				inverseJoinColumns = @JoinColumn(name = "role_id"))
 	private Set<Role> roles = new HashSet<>();
-	/*
-	@NotBlank
-	private Boolean isRemember;
-	
-	@NotBlank
-	private Boolean status;
-	*/
 	
 	public User() {
 	}
@@ -74,21 +67,4 @@ public class User extends BaseEntity{
 	public void setRoles(Set<Role> roles) {
 		this.roles = roles;
 	}
-/*
-	public Boolean getIsRemember() {
-		return isRemember;
-	}
-
-	public void setIsRemember(Boolean isRemember) {
-		this.isRemember = isRemember;
-	}
-
-	public Boolean getStatus() {
-		return status;
-	}
-
-	public void setStatus(Boolean status) {
-		this.status = status;
-	}
-	*/
 }
