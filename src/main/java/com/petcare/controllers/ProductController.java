@@ -62,8 +62,8 @@ public class ProductController {
 
 	@DeleteMapping("/delete")
 	@PreAuthorize("hasRole('ROLE_ADMIN')")
-	public ResponseEntity<?> deleteProduct(@RequestBody long[] ids) {
-		productService.delete(ids);
+	public ResponseEntity<?> deleteProduct(@RequestParam(name = "id") long id) {
+		productService.delete(id);
 		return ResponseEntity.ok("Success");
 	}
 }

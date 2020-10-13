@@ -6,10 +6,12 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import com.petcare.entities.BillDetail;
 import com.petcare.entities.Category;
 import com.petcare.entities.Product;
 import com.petcare.payload.request.ProductRequest;
 import com.petcare.payload.response.ProductResponse;
+import com.petcare.repositories.BillDetailRepository;
 import com.petcare.repositories.CategoryRepository;
 import com.petcare.repositories.ProductRepository;
 import com.petcare.services.IProductService;
@@ -22,6 +24,9 @@ public class ProductServiceImpl implements IProductService{
 
 	@Autowired
 	private CategoryRepository categoryRespository;
+	
+	@Autowired
+	private BillDetailRepository billDetailRepository;
 	
 	@Override
 	public List<ProductResponse> getListProduct() {
@@ -62,10 +67,13 @@ public class ProductServiceImpl implements IProductService{
 	}
 
 	@Override
-	public void delete(long[] ids) {
-		for (long id : ids) {
-			productRespository.deleteById(id);
+	public void delete(long id) {
+		List<BillDetail> billDetails = billDetailRepository.findAllByProductId(id);
+		for (BillDetail billDetail : billDetails) {
+			billDetailRepository.delete(billDetail);
 		}
+		
+		productRespository.deleteById(id);
 	}
 
 	@Override
