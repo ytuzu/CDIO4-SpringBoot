@@ -17,7 +17,7 @@ public class User extends BaseEntity{
 
 	@NotBlank
 	private String fullname;
-
+	
 	@NotBlank
 	private String password;
 

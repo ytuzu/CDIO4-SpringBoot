@@ -12,6 +12,6 @@ public interface IProductService {
 	List<ProductResponse> getListProduct();
 	List<ProductResponse> getListProductByCategoryCode(String code);
 	String save(ProductRequest model);
-	void delete(long[] ids);
+	void delete(long id);
 	ProductResponse getProductByID(Long id);
 }
