@@ -57,38 +57,6 @@ public class Bill extends BaseEntity {
 		this.total = total;
 	}
 
-	public Date getCreatedAt() {
-		return createdDate;
-	}
-
-	public void setCreatedAt(Date createdAt) {
-		this.createdDate = createdAt;
-	}
-
-	public User getUser() {
-		return user;
-	}
-
-	public void setUser(User user) {
-		this.user = user;
-	}
-
-	public BillStatus getBillStatus() {
-		return billStatus;
-	}
-
-	public void setBillStatus(BillStatus billStatus) {
-		this.billStatus = billStatus;
-	}
-
-	public List<BillDetail> getBillDetails() {
-		return billDetails;
-	}
-
-	public void setBillDetails(List<BillDetail> billDetails) {
-		this.billDetails = billDetails;
-	}
-
 	public Date getCreatedDate() {
 		return createdDate;
 	}
@@ -135,6 +103,30 @@ public class Bill extends BaseEntity {
 
 	public void setPayment(String payment) {
 		this.payment = payment;
+	}
+
+	public User getUser() {
+		return user;
+	}
+
+	public void setUser(User user) {
+		this.user = user;
+	}
+
+	public BillStatus getBillStatus() {
+		return billStatus;
+	}
+
+	public void setBillStatus(BillStatus billStatus) {
+		this.billStatus = billStatus;
+	}
+
+	public List<BillDetail> getBillDetails() {
+		return billDetails;
+	}
+
+	public void setBillDetails(List<BillDetail> billDetails) {
+		this.billDetails = billDetails;
 	}
 
 }
